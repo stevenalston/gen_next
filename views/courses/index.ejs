@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<header class="jumbotron">
+    <div class="container text-center">
+         <h1>Courses Page</h1>
+         <p class="lead text-muted">View our hand picked courses from all over the world</p>
+         <p>
+             <a class="btn btn-primary btn-lg mt-3" href="/courses/new"><i class="fa fa-plus" aria-hidden="true"></i> Course</a>
+         </p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row text-center">
+        <% courses.forEach(course => { %>
+        <div class="col-md-4 col-sm-6">
+            <div class="card my-3">
+                <img class="img-fluid" src="<%= course.image %>" alt="<%= course.name %>" title="<%= course.name %>">
+                <div class="caption">
+                    <h4><%= course.name %></h4>
+                </div>
+                <p>
+                    <a href="/courses/<%= course._id %>" class="btn btn-dark">More Info</a>
+                </p>
+            </div>
+        </div>
+        <% }) %>
+    </div>  <!-- ./row -->
+   
+</div>  <!-- ./container -->
+
+
+<% include ../partials/footer %>
